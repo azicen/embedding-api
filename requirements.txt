@@ -1,0 +1,9 @@
+torch
+torchvision
+
+
+sentence_transformers
+tokenizers==0.19.1
+
+uvicorn
+fastapi
