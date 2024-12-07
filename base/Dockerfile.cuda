@@ -21,12 +21,14 @@ RUN set -ex; \
         /var/tmp/* \
         /tmp/*
 
-COPY . /app
+COPY ./base /app
+COPY LICENSE README.md requirements.txt requirements.cuda.txt /app/
 WORKDIR /app
 
-RUN pip install \
-        --no-cache-dir \
-        -r /app/requirements.cuda.txt
+RUN set -ex; \
+    pip install --no-cache-dir -r /app/requirements.cuda.txt; \
+    pip install --no-cache-dir -U \
+        huggingface_hub
 
 EXPOSE 8000
 
