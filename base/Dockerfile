@@ -1,4 +1,4 @@
-FROM library/debian:12-slim
+FROM library/ubuntu:22.04
 
 ENV DEVICE=cpu \
     CUDA_LAUNCH_BLOCKING=1 \
